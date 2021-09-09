@@ -31,16 +31,8 @@ int main(void) {
 	// For every odd number above three that is true in table...
 	for (int i = 3; table[i] && i < maxSqrt; i = i + 2) {
 		// ... set every odd multiple of that number from i to max to false.
-		int iMul2 = i * 2;
-		for (int j = i * i; j < max; j = j + iMul2) {
+		for (int j = i * i; j < max; j = j + (i * 2)) {
 			table[j] = 0;
-		}
-	}
-
-	//Testing
-	for (int i = 1; i < 30000; i++) {
-		if (table[i]) {
-			printf("%d\n", i);
 		}
 	}
 
